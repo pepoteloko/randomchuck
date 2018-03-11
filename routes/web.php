@@ -10,12 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'FrontController@index');
+Route::get('/', 'FrontController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group([
+    'prefix'     => 'admin',
+    'namespace'  => 'Admin',
+    'middleware' => ['auth']
+], function () {
 
-Auth::routes();
+    Route::resource('chuck', 'ChuckController');
 
-Route::get('/home', 'HomeController@index')->name('home');
+});

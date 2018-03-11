@@ -11,8 +11,10 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset("css/bootstrap.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/bootstrap-grid.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/bootstrap-reboot.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/app.css") }}">
 </head>
 <body>
 <div id="app">
@@ -75,7 +77,9 @@
         </div>
     </nav>
 
-    @yield('content')
+    <div class="container">
+        @yield('content')
+    </div>
 </div>
 
 <!-- Scripts -->
