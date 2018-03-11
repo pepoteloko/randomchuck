@@ -17,6 +17,6 @@ Route::group([
 ], function () {
 
     Route::get('chuck', 'ChuckController@get');
-    Route::patch('chuck/{id}', 'ChukController@update');
+    Route::post('chuck', 'ChuckController@store');
 
 });

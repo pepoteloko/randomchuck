@@ -6,6 +6,7 @@ use App\Chuck;
 use App\Http\Controllers\Controller;
 use App\Http\Traits\CacheTrait;
 use App\Http\Traits\RandomTrait;
+use Auth;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Validator;
@@ -15,21 +16,16 @@ class ChuckController extends Controller
     use CacheTrait, RandomTrait;
 
     /**
-     * Update the specified resource in storage.
+     * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  int $id
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function store(Request $request)
     {
-        if (!$id) {
-            throw new HttpException(400, "Invalid id");
-        }
-
         $validator = Validator::make($request->all(), [
-            'user'     => 'required|exists:users,email',
+            'email'    => 'required|exists:users',
             'password' => 'required',
             'phrase'   => 'required|max:75',
             'title'    => 'required|max:255',
@@ -39,14 +35,21 @@ class ChuckController extends Controller
             throw new HttpException(400, "Invalid data");
         };
 
-        \Auth::attempt($request->all());
+        $user['email'] = $request->get('email');
+        $user['password'] = $request->get('password');
+        $logeado = Auth::attempt($user);
 
-        $chuck = Chuck::findOrFail($id);
-        $chuck->update($request->all());
+        if ($logeado) {
+            $chuck = new Chuck();
+            $chuck->phrase = $request->get('phrase');
+            $chuck->title = $request->get('title');
+            $chuck->save();
 
-        // TODO: Mensaje para el usuario
+            return json_encode(['result' => 'success', 'message' => 'Frase creada']);
+        } else {
+            return json_encode(['result' => 'false', 'message' => 'No tienes el permiso de Chuck']);
+        }
 
-        return redirect()->route('chuck.index');
     }
 
     /**
