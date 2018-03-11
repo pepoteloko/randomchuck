@@ -4,7 +4,7 @@ Generador de frases aleatorias de Chuck Norris
 
 Construido en Laravel 5.5
 
-# Instalación
+### Instalación
 
 1. Haz un git clone del proyecto.
 
@@ -16,7 +16,7 @@ Construido en Laravel 5.5
 
 El usuario por defecto es chuck@norris.com, y el password es norris.
 
-# CSS
+### CSS
 
 Aunque el CSS final está commiteado, puedes ejecutar npm run development para regenerar el CSS
 
