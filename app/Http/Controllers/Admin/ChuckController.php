@@ -43,7 +43,7 @@ class ChuckController extends Controller
 
         // TODO: Mensaje para el usuario
 
-        return $this->index();
+        return redirect()->route('chuck.index');
     }
 
     /**
@@ -91,7 +91,7 @@ class ChuckController extends Controller
 
         // TODO: Mensaje para el usuario
 
-        return $this->index();
+        return redirect()->route('chuck.index');
     }
 
     /**
@@ -108,6 +108,6 @@ class ChuckController extends Controller
 
         // TODO: Mensaje para el usuario
 
-        return $this->index();
+        return redirect()->route('chuck.index');
     }
 }

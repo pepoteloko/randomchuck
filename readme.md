@@ -6,10 +6,18 @@ Construido en Laravel 5.5
 
 # Instalación
 
-Has un git clone del proyecto.
+1. Haz un git clone del proyecto.
 
-Un composer install para instalar las dependecias.
+2. Un composer install para instalar las dependecias.
 
-Luego un php artisan migrate
+3. Luego un php artisan migrate
+
+4. Finalmente un php artisan db:seed
+
+El usuario por defecto es chuck@norris.com, y el password es norris.
+
+# CSS
+
+Aunque el CSS final está commiteado, puedes ejecutar npm run development para regenerar el CSS
 
 Y listo!

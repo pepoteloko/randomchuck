@@ -27,6 +27,5 @@ class Chuck extends FormRequest
             'title'  => 'required|max:75',
             'phrase' => 'required|max:255',
         ];
-
     }
 }
