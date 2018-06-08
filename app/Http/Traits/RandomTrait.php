@@ -3,7 +3,7 @@
 namespace App\Http\Traits;
 
 use App;
-use App\Chuck;
+use App\Models\Chuck;
 use DB;
 
 /**

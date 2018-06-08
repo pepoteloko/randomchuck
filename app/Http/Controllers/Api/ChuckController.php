@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Chuck;
 use App\Http\Controllers\Controller;
 use App\Http\Traits\CacheTrait;
 use App\Http\Traits\RandomTrait;
+use App\Models\Chuck;
 use Auth;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\HttpException;
@@ -73,5 +73,51 @@ class ChuckController extends Controller
         $phrase->save();
 
         return $phrase->phrase;
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public function index()
+    {
+        return Chuck::all();
+    }
+
+    /**
+     * @param $id
+     *
+     * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model
+     */
+    public function show($id)
+    {
+        return Chuck::findOrFail($id);
+    }
+
+    /**
+     * @param Request $request
+     * @param $id
+     *
+     * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model
+     */
+    public function update(Request $request, $id)
+    {
+        $chuck = Chuck::findOrFail($id);
+        $chuck->update($request->all());
+
+        return $chuck;
+    }
+
+    /**
+     * @param $id
+     *
+     * @return string
+     * @throws \Exception
+     */
+    public function destroy($id)
+    {
+        $chuck = Chuck::findOrFail($id);
+        $chuck->delete();
+
+        return '';
     }
 }

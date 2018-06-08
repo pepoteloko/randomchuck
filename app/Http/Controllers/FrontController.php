@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Chuck;
+use App\Models\Chuck;
 use App\Http\Traits\CacheTrait;
 use App\Http\Traits\RandomTrait;
 use Illuminate\Routing\Controller as BaseController;

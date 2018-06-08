@@ -1,9 +1,14 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Chuck
+ *
+ * @mixin \Eloquent
+ */
 class Chuck extends Model
 {
     protected $table = 'chuck_says';

@@ -1,7 +1,7 @@
 {
-  "/js/app.js": "/js/app.js",
-  "/css/app.css": "/css/app.css",
-  "/css/bootstrap.css": "/css/bootstrap.css",
-  "/css/bootstrap-grid.css": "/css/bootstrap-grid.css",
-  "/css/bootstrap-reboot.css": "/css/bootstrap-reboot.css"
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
+    "/css/bootstrap.css": "/css/bootstrap.css",
+    "/css/bootstrap-grid.css": "/css/bootstrap-grid.css",
+    "/css/bootstrap-reboot.css": "/css/bootstrap-reboot.css"
 }

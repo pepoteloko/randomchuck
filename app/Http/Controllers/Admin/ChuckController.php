@@ -2,12 +2,20 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Chuck;
+use App\Models\Chuck;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Chuck as Request;
 
 class ChuckController extends Controller
 {
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function vue()
+    {
+        return view('admin.phrases.index');
+    }
+
     /**
      * Display a listing of the resource.
      *

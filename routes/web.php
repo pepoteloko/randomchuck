@@ -21,5 +21,6 @@ Route::group([
 ], function () {
 
     Route::resource('chuck', 'ChuckController');
+    Route::get('phrases', 'ChuckController@vue')->name('companies.index');
 
 });

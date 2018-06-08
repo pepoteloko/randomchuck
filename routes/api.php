@@ -19,4 +19,7 @@ Route::group([
     Route::get('chuck', 'ChuckController@get');
     Route::post('chuck', 'ChuckController@store');
 
+    // Ejemplo Vue
+    Route::resource('phrases', 'ChuckController', ['except' => ['create', 'edit']]);
+
 });
